@@ -1,0 +1,7 @@
+node_modules/
+uploads/
+nota.js
+docker-compose.yml
+package-lock.json
+.env
+dataMongoDB
