@@ -3,5 +3,5 @@ uploads/
 nota.js
 docker-compose.yml
 package-lock.json
-.env
+config.env
 dataMongoDB

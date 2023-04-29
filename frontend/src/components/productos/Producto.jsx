@@ -41,7 +41,7 @@ const Producto = ({ productos }) => {
                 <p className="nombre">{nombre}</p>
                 <p className="precio">{precio}€</p>
                 {imagenProducto
-                    ? <img className="img-productos" src={`http://localhost:5000/${imagenProducto}`} alt="imagen producto" />
+                    ? <img className="img-productos" src={`${import.meta.env.VITE_BASE_URL}/${imagenProducto}`} alt="imagen producto" />
                     : null
                 }
             </div>

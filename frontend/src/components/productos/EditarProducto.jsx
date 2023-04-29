@@ -103,7 +103,7 @@ const EditarProducto = () => {
                     <label>Imagen:</label>
 
                     {imagenProducto
-                        ? <img src={`http://localhost:5000/${imagenProducto}`} alt="image producto" width={200} />
+                        ? <img src={`${import.meta.env.VITE_URL_BACKEND}/${imagenProducto}`} alt="image producto" width={200} />
                         : null}
                     <input type="file" onChange={archivoImg} name="imagen" />
                 </div>

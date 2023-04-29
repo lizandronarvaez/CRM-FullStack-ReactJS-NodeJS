@@ -35,7 +35,7 @@ const NuevoPedido = () => {
         e.preventDefault();
 
         // codigo para consultar los productos
-        const resultado = await clienteAxios.get(`http://localhost:5000/productos/clientes/${buscar}`);
+        const resultado = await clienteAxios.get(`${import.meta.env.VITE_BASE_URL}/productos/clientes/${buscar}`);
         const { data } = resultado;
 
         // Si no existe un producto con el ese nombre nos emitira un mensaje

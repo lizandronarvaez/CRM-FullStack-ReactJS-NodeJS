@@ -13,7 +13,7 @@ import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerJSDOC from "./source/docs/api-docs.js";
 // env
-config({ path: ".env" });
+config({ path: "config.env" });
 
 // Conection ala base de datos
 _conecctionDatabase();
@@ -21,10 +21,11 @@ _conecctionDatabase();
 // instancia express
 const app = express();
 // configuracion de cors
-const whiteList = process.env.URL_FRONTEND;
+const whiteList = [process.env.URL_FRONTEND];
 const corsOptions = {
     origin: (origin, callback) => {
-        if (whiteList.includes(origin)) {
+        const urls = whiteList.some(url => url === origin);
+        if (urls) {
             callback(null, true);
         } else {
             callback(new Error("Solicitud no permitida por cors"));
